@@ -1,0 +1,29 @@
+JTA Homework
+Description:
+The system should record all the errors, ever occurred on service layer.
+If an error occurs during any user operation - the operation itself must be rolled back, but an error should be recorded to the database
+
+1. Finish implementing all methods, created in classwork
+2. Implement user delete. Note: on delete operation, info from both uer tables should be deleted.
+3. Create another entity ErrorReport with fields:
+- id
+- exception type
+- message
+- timeOccurred
+
+4. All service methods must contain an exception. No method should return the result.
+5. When an exception occurs - it is necessary to persist the error report to the database and to rollback the user operation.
+6. In methods, that create or update anything in user - the exception must be thrown in the middle or in the end of such method.
+If an exception is thrown before the first database operation - it is considered to be cheating.
+
+Hint: one of the possible scenarios of implementing this will be using different propogation layers.
+See the end part of the lecture for more details and don't hesitate to google the example of using @Transactional's propogation.
+
+P.S. If you want to achieve the maximum result - it is better to create a project from scratch.
+If you do - make sure you create 2 or more tables.
+Nothing trains better then your own project, you write from scratch.
+
+---------------------------------------------------------------------
+I also have an advanced part for those, who dealt with the main part
+
+Good luck!
